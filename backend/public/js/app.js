@@ -43721,7 +43721,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         getClients: function getClients() {
             var _this = this;
 
-            axios.get('http://localhost/test/laravel-passport/public/oauth/clients').then(function (response) {
+            axios.get('http://localhost/sso/backend/public/oauth/clients').then(function (response) {
                 _this.clients = response.data;
             });
         },
@@ -43739,7 +43739,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
          * Create a new OAuth client for the user.
          */
         store: function store() {
-            this.persistClient('post', 'http://localhost/test/laravel-passport/public/oauth/clients', this.createForm, '#modal-create-client');
+            this.persistClient('post', 'http://localhost/sso/backend/public/oauth/clients', this.createForm, '#modal-create-client');
         },
 
 
@@ -43759,7 +43759,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
          * Update the client being edited.
          */
         update: function update() {
-            this.persistClient('put', 'http://localhost/test/laravel-passport/public/oauth/clients' + this.editForm.id, this.editForm, '#modal-edit-client');
+            this.persistClient('put', 'http://localhost/sso/backend/public/oauth/clients' + this.editForm.id, this.editForm, '#modal-edit-client');
         },
 
 
@@ -43795,7 +43795,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         destroy: function destroy(client) {
             var _this3 = this;
 
-            axios.delete('http://localhost/test/laravel-passport/public/oauth/clients' + client.id).then(function (response) {
+            axios.delete('http://localhost/sso/backend/public/oauth/clients' + client.id).then(function (response) {
                 _this3.getClients();
             });
         }
@@ -44545,7 +44545,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         getTokens: function getTokens() {
             var _this = this;
 
-            axios.get('http://localhost/test/laravel-passport/public/oauth/tokens').then(function (response) {
+            axios.get('http://localhost/sso/backend/public/oauth/tokens').then(function (response) {
                 _this.tokens = response.data;
             });
         },
@@ -44557,7 +44557,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         revoke: function revoke(token) {
             var _this2 = this;
 
-            axios.delete('http://localhost/test/laravel-passport/public/oauth/tokens/' + token.id).then(function (response) {
+            axios.delete('http://localhost/sso/backend/public/oauth/tokens/' + token.id).then(function (response) {
                 _this2.getTokens();
             });
         }
@@ -44989,7 +44989,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         getTokens: function getTokens() {
             var _this = this;
 
-            axios.get('http://localhost/test/laravel-passport/public/oauth/personal-access-tokens').then(function (response) {
+            axios.get('http://localhost/sso/backend/public/oauth/personal-access-tokens').then(function (response) {
                 _this.tokens = response.data;
             });
         },
@@ -45001,7 +45001,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         getScopes: function getScopes() {
             var _this2 = this;
 
-            axios.get('http://localhost/test/laravel-passport/public/oauth/scopes').then(function (response) {
+            axios.get('http://localhost/sso/backend/public/oauth/scopes').then(function (response) {
                 _this2.scopes = response.data;
             });
         },
@@ -45025,7 +45025,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
             this.form.errors = [];
 
-            axios.post('http://localhost/test/laravel-passport/public/oauth/personal-access-tokens', this.form).then(function (response) {
+            axios.post('http://localhost/sso/backend/public/oauth/personal-access-tokens', this.form).then(function (response) {
                 _this3.form.name = '';
                 _this3.form.scopes = [];
                 _this3.form.errors = [];
@@ -45083,7 +45083,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         revoke: function revoke(token) {
             var _this4 = this;
 
-            axios.delete('http://localhost/test/laravel-passport/public/oauth/personal-access-tokens/' + token.id).then(function (response) {
+            axios.delete('http://localhost/sso/backend/public/oauth/personal-access-tokens/' + token.id).then(function (response) {
                 _this4.getTokens();
             });
         }
